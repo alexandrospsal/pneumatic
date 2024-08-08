@@ -18,6 +18,7 @@ $social-icons: (
 	"github" #171515,
 	"soundcloud" #f70,
 	"instagram" #833ab4,
+	"linkedin" #0072b1,
 );
 
 
@@ -42,7 +43,8 @@ table { border-collapse: collapse; border-spacing: 0; }
 // Typography
 
 body {
-	background: #fff;
+	// background: #eeebea;
+	background: #f5f4f3;
 	font-family: $main-font;
 	font-size: 12px;
 	line-height: 1.6;
@@ -99,7 +101,7 @@ hr {
 	clear: both;
 	border: none;
 	height: 1px;
-	background-color: #ebebeb;
+	background-color: #aaa;
 	margin: 10px 5px;
 }
 
@@ -267,7 +269,7 @@ aside div {
 }
 
 #name {
-	font-size: 2em;
+	font-size: 1.8em;
 	line-height: 1.35;
 	letter-spacing: -0.5px;
 }
@@ -277,11 +279,11 @@ aside div {
 }
 
 #sidebar-links {
-	color: #aaa;
+	color: #414141;
 }
 
 #sidebar-divider {
-	display: none;  // only appears on mobile
+	display: none;  // only appears on mobile}
 }
 
 .title {
@@ -327,7 +329,7 @@ aside div {
 	aside {
 		float: left;
 		width: 160px;
-		position: fixed;
+		// position: fixed;
 	}
 
 	article, footer {
@@ -354,6 +356,7 @@ aside div {
 	}
 
 	#avatar { float: left; width: 120px; }
+	#sidebar-divider { display: block; }
 	#bio { font-size: 0.85em; }
 	#social .icon { padding: 0 1px; }
 	article { margin-top: 14px; }
