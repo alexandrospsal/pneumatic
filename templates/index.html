@@ -12,15 +12,37 @@
 	<meta property="og:url" content="{{ SITEURL }}">
 {% endblock %}
 
+
+
 {% block content %}
-	{% for article in articles[:4] %}
-		<h1 class="title"><a href="{{ article.url }}" title="{{ article.title | striptags }}">{{ article.title }}</a></h1>
+	{% for page in pages %}
+		{% if page.template == 'index' %}
+			{{ page.content }}
+		{% endif %}
+	{% endfor %}
+	
+	<ul>
+		{% for article in articles[:5] %}
+			<li>
+				<strong><a href="{{ article.url }}" title="{{ article.title | striptags }}">{{ article.title }}</a></strong>
+				<time datetime="{{ article.date }}">({{ article.date.day }}/{{ article.date.month }}/{{ article.date.year }})</time>
+			</li>
+			<!-- {% if loop.last %}<br>{% endif %} -->
+		{% endfor %}
+	</ul>
+	
+
+	<!-- {% for article in articles[:4] %}
+		<h2 class="title"><a href="{{ article.url }}" title="{{ article.title | striptags }}">{{ article.title }}</a></h2>
 		<time class="date" datetime="{{ article.date }}">{{ article.locale_date }}</time>
 		<div class="content summary">
 			<p>{{ article.summary | striptags | replace(' …', ' ...') | replace(' ...', '&nbsp;&#8230;') }}</p>
 		</div>
 		{% if not loop.last %}<br>{% endif %}
-	{% endfor %}
+	{% endfor %} -->
+
 	<div id="view-archives"><a href="/archive/">All posts / Archive &raquo;</a></div>
 {% endblock %}
+
+
 
